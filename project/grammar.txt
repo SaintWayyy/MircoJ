@@ -1,0 +1,74 @@
+<comment> ::= // to the end-of-line
+            | /* to */;
+
+<unOp>  ::= - | !
+<binOp> ::= + |  -  |  *  |  /  |  %  |  &&  |  || 
+          | > |  <  | >=  | <=  |  == |  !=  ;
+
+<type> ::= int | double | boolean | string | <object>
+<literals> ::= <Numeral> | true | false | <String> 
+
+<expr>      ::= <literal>
+            | <variable name>
+            | <access object field>
+            | <access object method>
+            | <assign>
+            | <function call>
+            | <expr> <binOp> <expr>
+            | <unOp> <expr>
+            | emptyExpr
+
+<assign>    ::= <primitiveAsn>
+            | <objectAsn> 
+
+<primitiveAsn>  ::= <type> <variable name> <exp>
+            |  <variable name> <exp>
+
+<objectAsn> ::= <class name> <variable name> <expr>
+            |  <variable name> <expr>
+
+<function call> ::= <function name> <literal list>
+
+<statement> ::= <statementBlock>
+            | <expr>
+            | (if <expr> <statement> <statement>)
+            | (for <expr> <expr> <expr> <statement>)
+            | while <expr> <statement>
+            | return <expr>
+            | <varDef>
+
+<varDef>    ::= <type> <variable name>
+
+<fileStmt>  ::= <fileStmtBlock>
+            |   <statement>
+            |   <funDef>
+            |   <classDef>
+            |   <interfaceDef>
+
+<funDef>    ::= <type> <function name> <varDef list> <statement>
+
+<classDef>  ::= <class name> <fatherclass name opt> <interface name list opt> <fieldDef> <methodDef>
+
+<fieldDef>  ::= <accessControl> <static_opt> <varDef>
+
+<methodDef> ::= <accessControl> <static opt> <type> <funDef>
+
+<interfaceDef> ::= <type> <function name> <varDef list>
+
+
+<Numeral>   ::= sequence of digits, possibly prefixed with a minus sign.
+<String>    ::= sequence of characters with quotes.
+<*-StmtBlock>   ::= a list of <*-Stmt>
+<*-name>    ::= sequence of characters not a numeral and 
+                not containing (, ), [, ], {, }, ;, or whitespace
+<access object field> ::= access one of the fields of an object by using "." after the object followed
+                    by the field name.
+<accessControl> ::= if not specified, it's "Public" by default. 
+                    User can also specify "Protected" or "Private".
+<*-opt>     ::= can be empty
+
+
+
+
+page 402(reg exp) 388(class) 328(nano ML syn)  290(uScheme type system) 284(uScheme abstract syn)
+276 (uSheme syntax)

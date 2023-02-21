@@ -1,0 +1,81 @@
+1;
+2.1;
+true;
+"hello world";
+Dog;
+1 + 2;
+1 - 2;
+1 * 2;
+1 / 2;
+- 2;
+int c = 0 + Dog.weight();
+Dog.weight;
+Dog.bark();
+Dog a;
+Cat b = new Cat();
+print(x, y, z);
+if (x < 2) {
+    x = x + 2;
+    return x + 4;
+} else {
+        int y = x + 3;
+        return y;
+}
+
+for (int i = 0; i < 10; i = i + 1) {
+    print(i);
+    print(i + 1);
+    break;
+}
+
+while (i < 10) {
+    k = k + 3;
+    continue;
+}
+int a = 1;
+a = 2;
+
+int sum (int x, int y) {
+    print("hello");
+    return x + y;
+}
+
+string toBig (string x) {
+    return allCaps(x);
+}
+
+interface Human extends Animals, Alien {
+    static void talk(string words);
+    int weight();
+}
+
+class Student extends Parent implements Human {
+    protect static int height = 170;
+    private int weight = 120;
+
+    Student(int height, int age, int weight){
+        this.height = height;
+        this.weight = weight;
+        this.age    = age;
+    }
+    private static void talk(string words) {
+        print("I'm a student at Tufts");
+    }
+    string first_name(string s){
+        return first(s);
+    }
+}
+
+Student allen = new Student(10,10,10);
+allen = new Student(1,0,1);
+
+allen.talk("hello");
+
+
+int[] a = b;
+int[] a = [2,3,4];
+bool[] b = [true, false, true];
+int[] a = [2,3,4] > 3;  //numpy array operation
+int[] a = [[2,3,4], [3]];
+a[1];
+c = a[1] + a[2];
